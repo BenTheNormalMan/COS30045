@@ -1,0 +1,551 @@
+/* PowerHub-inspired color palette for Exercise 4.1 */
+:root {
+  /* Primary colors from PowerHub theme */
+  --primary-beige: #FFF3CC;
+  --accent-gold: #F6C049;
+  --secondary-orange: #E5953C;
+  --border-brown: #6B4C2B;
+  --text-dark: #3D2A15;
+  
+  /* Additional colors for SVG scene */
+  --sky-blue: #87CEEB;
+  --grass-green: #228B22;
+  --tree-green: #32CD32;
+  --house-brown: #D2691E;
+  --roof-brown: #A0522D;
+  --sun-gold: #FFD700;
+  --white: #ffffff;
+  --light-gray: #FAF8F4;
+  
+  /* Layout variables */
+  --max-width: 1200px;
+  --border-radius: 12px;
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --shadow-light: 0 2px 10px rgba(107, 76, 43, 0.1);
+  --shadow-medium: 0 4px 20px rgba(107, 76, 43, 0.15);
+}
+
+/* Skip link for accessibility */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 6px;
+  background: var(--accent-gold);
+  color: var(--text-dark);
+  padding: 8px 16px;
+  text-decoration: none;
+  border-radius: var(--border-radius);
+  z-index: 1000;
+  transition: var(--transition);
+  font-weight: 500;
+}
+
+.skip-link:focus {
+  top: 6px;
+}
+
+/* Base styles */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: linear-gradient(135deg, var(--primary-beige) 0%, var(--light-gray) 100%);
+  background-attachment: fixed;
+  color: var(--text-dark);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  line-height: 1.6;
+}
+
+/* Header */
+header {
+  background: linear-gradient(135deg, var(--border-brown), var(--text-dark));
+  color: var(--primary-beige);
+  padding: 2rem 0;
+  text-align: center;
+  box-shadow: var(--shadow-medium);
+}
+
+.header-container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  background: linear-gradient(135deg, var(--accent-gold), var(--secondary-orange));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  opacity: 0.9;
+  font-weight: 400;
+}
+
+/* Main content */
+main {
+  flex: 1;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 2rem;
+  width: 100%;
+}
+
+/* Sections */
+section {
+  margin: 3rem 0;
+}
+
+.section-header, .intro-content, .reference-content, .notes-content {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 1rem;
+}
+
+.description {
+  font-size: 1.1rem;
+  color: var(--text-dark);
+  opacity: 0.8;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* SVG Scene styling */
+.scene-container {
+  background: var(--white);
+  border: 3px solid var(--border-brown);
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
+  margin: 2rem auto;
+  max-width: 950px;
+  box-shadow: var(--shadow-medium);
+  transition: var(--transition);
+}
+
+.scene-container:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(107, 76, 43, 0.2);
+}
+
+/* SVG element styles */
+.sky { 
+  fill: var(--sky-blue); 
+}
+
+.grass { 
+  fill: var(--grass-green); 
+}
+
+.sun { 
+  fill: var(--sun-gold); 
+  stroke: #FFA500; 
+  stroke-width: 2; 
+}
+
+.house-body { 
+  fill: var(--house-brown); 
+  stroke: var(--border-brown); 
+  stroke-width: 3; 
+}
+
+.roof { 
+  fill: var(--roof-brown); 
+  stroke: #654321; 
+  stroke-width: 2; 
+}
+
+.door { 
+  fill: var(--border-brown); 
+  stroke: #654321; 
+  stroke-width: 2; 
+}
+
+.window { 
+  fill: #E6F3FF; 
+  stroke: #4682B4; 
+  stroke-width: 2; 
+}
+
+.door-knob { 
+  fill: var(--text-dark); 
+}
+
+.tree-trunk { 
+  fill: var(--border-brown); 
+}
+
+.tree-leaves { 
+  fill: var(--tree-green); 
+  stroke: var(--grass-green); 
+  stroke-width: 2; 
+}
+
+.bush { 
+  fill: var(--tree-green); 
+  stroke: var(--grass-green); 
+  stroke-width: 2; 
+}
+
+.path { 
+  fill: none; 
+  stroke: #DAA520; 
+  stroke-width: 8; 
+  stroke-linecap: round;
+}
+
+.property-line { 
+  stroke: var(--border-brown); 
+  stroke-width: 2; 
+  stroke-dasharray: 5,5; 
+}
+
+.scene-label { 
+  font-family: 'Arial', sans-serif; 
+  font-size: 24px; 
+  fill: var(--text-dark); 
+  font-weight: bold; 
+}
+
+.coordinate-text { 
+  font-family: 'Arial', sans-serif; 
+  font-size: 12px; 
+  fill: var(--border-brown); 
+}
+
+/* Elements reference grid */
+.elements-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.element-card {
+  background: var(--white);
+  border: 1px solid var(--border-brown);
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-light);
+  transition: var(--transition);
+}
+
+.element-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-medium);
+  border-color: var(--accent-gold);
+}
+
+.element-card h3 {
+  font-size: 1.3rem;
+  color: var(--text-dark);
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.element-card p {
+  color: var(--text-dark);
+  opacity: 0.8;
+  font-size: 0.95rem;
+}
+
+/* Technical notes */
+.notes-list {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: left;
+  list-style: none;
+  padding: 0;
+}
+
+.notes-list li {
+  background: var(--white);
+  margin: 0.75rem 0;
+  padding: 1rem 1.5rem;
+  border-left: 4px solid var(--accent-gold);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-light);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.notes-list li strong {
+  color: var(--secondary-orange);
+}
+
+/* Footer */
+footer {
+  background: linear-gradient(135deg, var(--border-brown), var(--text-dark));
+  color: var(--primary-beige);
+  text-align: center;
+  padding: 2rem;
+  margin-top: auto;
+}
+
+.footer-content p {
+  margin: 0.5rem 0;
+  font-size: 0.95rem;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  main {
+    padding: 1rem;
+  }
+  
+  header h1 {
+    font-size: 2rem;
+  }
+  
+  .subtitle {
+    font-size: 1rem;
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+  }
+  
+  .scene-container {
+    padding: 1rem;
+  }
+  
+  .elements-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .element-card {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 1.75rem;
+  }
+  
+  .scene-container {
+    padding: 0.5rem;
+    margin: 1rem auto;
+  }
+  
+  .description {
+    font-size: 1rem;
+  }
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* Focus indicators */
+*:focus {
+  outline: 2px solid var(--accent-gold);
+  outline-offset: 2px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  :root {
+    --text-dark: #2A1A0F;
+    --border-brown: #4A3525;
+    --accent-gold: #E5AC3A;
+    --secondary-orange: #D6842A;
+  }
+}
+
+/* ================================
+   Exercise 4.3 – Responsive SVG Container
+   (for bar chart setup)
+================================= */
+
+.responsive-svg-container {
+  margin-right: auto;
+  margin-left: auto;
+  width: 100%;
+  max-width: var(--max-width);
+  border: 2px dashed var(--accent-gold); /* visible during testing */
+  padding: 1rem;
+  border-radius: var(--border-radius);
+  background: var(--white);
+  box-shadow: var(--shadow-light);
+  transition: var(--transition);
+}
+
+.responsive-svg-container:hover {
+  box-shadow: var(--shadow-medium);
+  transform: translateY(-2px);
+}
+
+/* SVG inside responsive container */
+.responsive-svg-container svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--border-brown);
+  border-radius: var(--border-radius);
+}
+
+/* Optional label text style */
+.responsive-svg-container text {
+  font-family: 'Inter', sans-serif;
+  fill: var(--text-dark);
+  font-size: 0.9rem;
+}
+/* Responsive SVG Container (for Exercise 4.3–4.4) */
+.responsive-svg-container {
+  margin: 2rem auto;
+  width: 100%;
+  max-width: 1200px;
+  border: 2px dashed var(--border-brown);
+  border-radius: var(--border-radius);
+  background-color: var(--white);
+  box-shadow: var(--shadow-light);
+  min-height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* === Exercise 4.5 additions === */
+.responsive-svg-container { margin: 0 auto; width: 100%; max-width: 1200px; }
+svg.chart-raw { border: 1px solid var(--border-brown); display:block; width:100%; height:auto; }
+rect.bar { fill: var(--secondary-orange); stroke: var(--border-brown); stroke-width: 1.5; }
+rect.bar:hover { opacity: .9; }
+.text-brand { fill: var(--text-dark); font: 13px/1.2 system-ui, sans-serif; }
+
+/* ================================
+   Exercise 4.7 – Adding Labels
+   (Extends bar chart with grouped <g> + text)
+================================== */
+
+/* SVG container for labeled chart */
+#chart-4-7 {
+  border: 1.5px solid var(--border-brown);
+  border-radius: var(--border-radius);
+  background-color: var(--white);
+  box-shadow: var(--shadow-light);
+}
+
+/* Group container for bar + labels */
+.bar-group {
+  transition: var(--transition);
+}
+
+.bar-group:hover {
+  transform: translateX(3px);
+  opacity: 0.95;
+}
+
+/* Bars */
+rect.bar {
+  fill: var(--secondary-orange);
+  stroke: var(--border-brown);
+  stroke-width: 2;
+  rx: 4;
+  ry: 4;
+  transition: var(--transition);
+}
+
+rect.bar:hover {
+  fill: var(--accent-gold);
+  cursor: pointer;
+}
+
+/* Brand label (left side) */
+.text-brand {
+  fill: var(--text-dark);
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  text-anchor: end;
+  dominant-baseline: middle;
+  user-select: none;
+}
+
+/* Count label (right side of bar) */
+.text-count {
+  fill: var(--text-dark);
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 13px;
+  text-anchor: start;
+  dominant-baseline: middle;
+  user-select: none;
+}
+
+/* Tooltip-like hover effect (optional aesthetic) */
+.bar-group:hover .text-count {
+  font-weight: 600;
+  fill: var(--border-brown);
+}
+
+/* SVG title styling */
+.chart-title {
+  font-size: 1.4rem;
+  fill: var(--text-dark);
+  font-weight: 700;
+  text-anchor: middle;
+  font-family: 'Inter', sans-serif;
+}
+
+/* 4.7 label cosmetics */
+.bar-label {
+  fill: var(--text-dark);
+  font: 13px/1.2 system-ui, sans-serif;
+}
+
+.bar-value {
+  font: 13px/1.2 system-ui, sans-serif;
+  fill: var(--text-dark);
+}
+
+.bar-value.inside {
+  fill: #fff;               /* readable on orange bar */
+  font-weight: 700;
+}
+
+.bar-value.outside {
+  fill: var(--text-dark);
+}
+
+/* Responsive tweak */
+@media (max-width: 768px) {
+  .text-brand {
+    font-size: 12px;
+  }
+  .text-count {
+    font-size: 11px;
+  }
+}

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Exercise 4.6 – Scaling charts (D3 scales)</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <header>
+    <div class="header-container">
+      <h1>Exercise 4.6 – Scaling charts</h1>
+      <p class="subtitle">Linear scale (x) + Band scale (y)</p>
+    </div>
+  </header>
+
+  <main id="main" class="container" style="max-width: var(--max-width); margin: 0 auto; padding: 2rem;">
+    <section>
+      <p class="description">
+        We intentionally use a small <code>viewBox</code> so you can see how D3 scales
+        (<code>d3.scaleLinear</code> for counts and <code>d3.scaleBand</code> for categories)
+        keep the bars fitting nicely within the SVG.
+      </p>
+    </section>
+
+    <!-- Chart container – JS will append an SVG inside this div -->
+    <section>
+      <h2 style="margin-top:1rem;">Bar chart (auto-scaled)</h2>
+      <div id="chart-area" class="responsive-svg-container"></div>
+      <p class="note" style="opacity:.8;margin-top:.5rem;">
+        Tip: Resize the window to see the SVG scale responsively.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <p>&copy; 2025 – COS30045 Exercise 4.6</p>
+    </div>
+  </footer>
+
+  <!-- D3 v7 -->
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <!-- Script for Exercise 4.6 (creates the scaled bar chart) -->
+  <script src="js/d3load_4_6.js"></script>
+</body>
+</html>

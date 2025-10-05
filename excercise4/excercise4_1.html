@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 4.1 - SVG House and Garden Scene | PowerHub</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Skip to main content for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <header>
+        <div class="header-container">
+            <h1>Exercise 4.1 - SVG House and Garden Scene</h1>
+            <p class="subtitle">D3.js Foundation Exercise - SVG Elements and Shapes</p>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <section class="intro-section">
+            <div class="intro-content">
+                <h2>SVG Scene Demonstration</h2>
+                <p class="description">
+                    This exercise demonstrates the use of various SVG elements and shapes that form the foundation for D3.js data visualization. 
+                    The scene includes rectangles, circles, ellipses, polygons, lines, paths, text elements, and grouped transformations.
+                </p>
+            </div>
+        </section>
+
+        <section class="svg-scene-section">
+            <div class="scene-container">
+                <svg viewBox="0 0 900 520" width="900" height="520" role="img" aria-labelledby="scene-title" aria-describedby="scene-desc">
+                    <title id="scene-title">House and Garden SVG Scene</title>
+                    <desc id="scene-desc">A colorful illustration of a house with garden featuring various SVG shapes and elements for D3.js learning</desc>
+                    
+                    <!-- Sky background (rectangle) -->
+                    <rect x="0" y="0" width="900" height="300" class="sky"/>
+                    
+                    <!-- Grass background (rectangle) -->
+                    <rect x="0" y="300" width="900" height="220" class="grass"/>
+                    
+                    <!-- Sun (circle) -->
+                    <circle cx="750" cy="80" r="50" class="sun"/>
+                    
+                    <!-- Curved garden path (path element with quadratic bezier) -->
+                    <path d="M 100 520 Q 200 400 350 450 T 600 480" class="path"/>
+                    
+                    <!-- Tree trunk (rectangle) -->
+                    <rect x="120" y="250" width="25" height="80" class="tree-trunk"/>
+                    
+                    <!-- Tree leaves (ellipse) -->
+                    <ellipse cx="132" cy="230" rx="40" ry="35" class="tree-leaves"/>
+                    
+                    <!-- House body (rectangle) -->
+                    <rect x="400" y="200" width="200" height="150" class="house-body"/>
+                    
+                    <!-- House roof (polygon - triangle) -->
+                    <polygon points="380,200 500,120 620,200" class="roof"/>
+                    
+                    <!-- Door (rectangle) -->
+                    <rect x="470" y="280" width="60" height="70" class="door"/>
+                    
+                    <!-- Door knob (small circle) -->
+                    <circle cx="515" cy="315" r="3" class="door-knob"/>
+                    
+                    <!-- Windows group with transform -->
+                    <g transform="translate(410, 220)" class="windows-group">
+                        <!-- Left window (rectangle) -->
+                        <rect x="0" y="0" width="40" height="35" class="window"/>
+                        <!-- Right window (rectangle) -->
+                        <rect x="140" y="0" width="40" height="35" class="window"/>
+                    </g>
+                    
+                    <!-- Decorative bushes using circles -->
+                    <circle cx="350" cy="320" r="25" class="bush"/>
+                    <circle cx="680" cy="315" r="30" class="bush"/>
+                    <circle cx="700" cy="325" r="20" class="bush"/>
+                    
+                    <!-- Property boundary line -->
+                    <line x1="50" y1="480" x2="850" y2="480" class="property-line"/>
+                    
+                    <!-- Scene title text -->
+                    <text x="450" y="50" text-anchor="middle" class="scene-label">Cozy Garden House</text>
+                    
+                    <!-- Coordinate reference text -->
+                    <text x="20" y="510" class="coordinate-text">Origin: (0,0) - ViewBox: 900×520</text>
+                </svg>
+            </div>
+        </section>
+
+        <section class="elements-reference">
+            <div class="reference-content">
+                <h2>SVG Elements Used</h2>
+                <div class="elements-grid">
+                    <div class="element-card">
+                        <h3>Rectangle (&lt;rect&gt;)</h3>
+                        <p>Sky, grass, house body, door, tree trunk, windows</p>
+                    </div>
+                    <div class="element-card">
+                        <h3>Circle (&lt;circle&gt;)</h3>
+                        <p>Sun, door knob, decorative bushes</p>
+                    </div>
+                    <div class="element-card">
+                        <h3>Ellipse (&lt;ellipse&gt;)</h3>
+                        <p>Tree leaves with different x and y radii</p>
+                    </div>
+                    <div class="element-card">
+                        <h3>Polygon (&lt;polygon&gt;)</h3>
+                        <p>House roof (triangular shape)</p>
+                    </div>
+                    <div class="element-card">
+                        <h3>Line (&lt;line&gt;)</h3>
+                        <p>Property boundary with dashed stroke</p>
+                    </div>
+                    <div class="element-card">
+                        <h3>Path (&lt;path&gt;)</h3>
+                        <p>Curved garden walkway using Bézier curves</p>
+                    </div>
+                    <div class="element-card">
+                        <h3>Text (&lt;text&gt;)</h3>
+                        <p>Scene title and coordinate reference</p>
+                    </div>
+                    <div class="element-card">
+                        <h3>Group (&lt;g&gt;)</h3>
+                        <p>Windows grouped with transform translation</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="technical-notes">
+            <div class="notes-content">
+                <h2>Technical Implementation Notes</h2>
+                <ul class="notes-list">
+                    <li><strong>ViewBox:</strong> Clean coordinate system (0 0 900 520) for responsive scaling</li>
+                    <li><strong>Accessibility:</strong> Proper ARIA labels, title, and description elements</li>
+                    <li><strong>Styling:</strong> CSS classes for maintainable and reusable styling</li>
+                    <li><strong>Transforms:</strong> Group transformation for positioning window elements</li>
+                    <li><strong>Paths:</strong> Quadratic Bézier curves for organic curved elements</li>
+                    <li><strong>Semantic Structure:</strong> Logical layering from background to foreground</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 Dong Nguyen Gia Huy (104993450) - COS30045 Exercise 4.1</p>
+            <p>SVG Foundation for D3.js Data Visualization</p>
+        </div>
+    </footer>
+</body>
+</html>

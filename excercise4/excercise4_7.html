@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Exercise 4.7 – Adding Labels</title>
+
+  <!-- D3 Library -->
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+
+  <!-- Main stylesheet (PowerHub theme + 4.7 styles) -->
+ <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <header>
+    <div class="header-container">
+      <h1>Exercise 4.7 – Adding Labels in D3</h1>
+      <p class="subtitle">Attach labels to bars using <code>&lt;g&gt;</code> groups and transform attributes</p>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="intro-content">
+      <h2>Bar Chart with Labels</h2>
+      <p class="description">
+        This exercise extends the previous 4.6 bar chart by adding labels to each bar.  
+        Each bar and its text are grouped in a <code>&lt;g&gt;</code> element so they move together when scaled or translated.
+      </p>
+    </section>
+
+    <section class="scene-container">
+      <h3 class="section-header">Result</h3>
+      <div class="responsive-svg-container">
+        <svg id="chart-4-7" viewBox="0 0 900 400"></svg>
+      </div>
+    </section>
+
+    <section class="notes-content">
+      <h3>Notes</h3>
+      <ul class="notes-list">
+        <li><strong>Goal:</strong> Add brand and count labels to each bar.</li>
+        <li><strong>Tip:</strong> Use <code>d3.scaleLinear()</code> for bar width and <code>d3.scaleBand()</code> for spacing.</li>
+        <li><strong>Styling:</strong> Hovering a bar slightly shifts it and bolds its count text.</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <p>© 2025 Swinburne University – COS30045 D3 Exercises</p>
+    </div>
+  </footer>
+
+  <!-- Script -->
+  <script src="js/d3load_4_7.js"></script>
+</body>
+</html>
