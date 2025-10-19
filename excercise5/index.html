@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Exercise 5 – Multi‑chart (v2 psychology-ready)</title>
+<link rel="stylesheet" href="css/styles.css"/>
+<script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>
+</head><body>
+<header class="page-header"><h1>TV Energy & Power Prices — Multi‑chart</h1>
+<p class="intro">Palette Okabe–Ito (color‑blind safe), high contrast, subtle hierarchy. Hover for details. Resize window to test responsiveness.</p>
+</header>
+<main class="grid">
+<section class="card" id="scatter-card"><h2>Scatter: Energy vs Star Rating</h2><p class="sub">Source: <code>data/Ex5_TV_energy.csv</code></p><div id="scatter"></div></section>
+<section class="card" id="donut-card"><h2>Donut: Avg Energy by Screen Tech (All sizes)</h2><p class="sub">Source: <code>data/Ex5_TV_energy_Allsizes_byScreenType.csv</code></p><div id="donut"></div><div id="donut-legend" class="legend"></div></section>
+<section class="card" id="bar-card"><h2>Bar: Energy (Avg) — 55″ TVs</h2><p class="sub">Source: <code>data/Ex5_TV_energy_55inchtv_byScreenType.csv</code></p><div id="bar"></div><div id="bar-legend" class="legend"></div></section>
+<section class="card" id="line-card"><h2>Line: Spot Power Prices (1998–2024)</h2><p class="sub">Source: <code>data/Ex5_ARE_Spot_Prices.csv</code></p><div id="line"></div></section>
+</main>
+<script src="js/utils.js"></script><script src="js/scatter.js"></script><script src="js/donut.js"></script><script src="js/barchart.js"></script><script src="js/line.js"></script>
+</body></html>

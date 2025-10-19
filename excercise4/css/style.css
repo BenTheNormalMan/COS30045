@@ -98,6 +98,48 @@ header h1 {
   font-weight: 400;
 }
 
+/* Navigation styles */
+.main-nav {
+  background-color: var(--border-brown);
+  padding: 0.5rem;
+  border-radius: var(--border-radius);
+  margin: 1rem auto;
+  max-width: var(--max-width);
+}
+
+.main-nav ul {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex-wrap: wrap;
+}
+
+.main-nav li {
+  margin: 0.25rem;
+}
+
+.main-nav a {
+  display: block;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  color: var(--white);
+  border-radius: var(--border-radius);
+  transition: var(--transition);
+  font-weight: 500;
+}
+
+.main-nav a:hover {
+  background-color: var(--secondary-orange);
+}
+
+.main-nav a.active {
+  background-color: var(--accent-gold);
+  color: var(--text-dark);
+  font-weight: bold;
+}
+
 /* Main content */
 main {
   flex: 1;

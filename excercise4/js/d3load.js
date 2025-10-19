@@ -10,7 +10,7 @@
   const COLS = {
     brand: ["Brand_Reg", "brand", "Brand", "Brand_Name"],
     count: ["Count", "count", "Total", "Freq"]
-  };
+  }; 
   const pickCol = (columns, candidates) =>
     candidates.find(c => columns.includes(c)) || null;
 

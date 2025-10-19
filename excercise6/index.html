@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Exercise 6 – Histogram & Scatterplot</title>
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/visualisations.css">
+</head>
+<body>
+  <main class="page">
+    <header class="ribbon"><h2>TV Energy Consumption</h2></header>
+
+    <section class="card">
+      <h1>Energy Consumption for different TV screen<br/>types and sizes</h1>
+      <p class="lede">Most TVs on sale in Australia are LED and they vary considerably in energy consumption.</p>
+
+      <!-- Filters (6.1) -->
+      <div id="filters" class="filters"></div>
+
+      <!-- Histogram (6.1) -->
+      <div id="histogram" class="responsive-svg-container" aria-label="Histogram of TV energy consumption"></div>
+      <p class="note">TVs with the same star rating can have very different energy consumption. It all depends on screen size and technology type.</p>
+      <!-- Scatterplot (6.2) -->
+      <div id="scatterplot" class="responsive-svg-container" aria-label="Scatterplot: Energy vs Star rating"></div>
+
+      <p class="note">Only TVs with energy consumption less than 1,800 kWh/year have been included.</p>
+      <div class="meta">
+        <p class="meta-title">Data source</p>
+        <p class="meta-link"><a href="#">Energy Rating Data for household appliances – Televisions</a></p>
+        <p class="meta-date">Downloaded Sep 2025</p>
+      </div>
+    </section>
+
+    <footer class="footer-strip"><span>© 2025 Data Visualisation Week 6</span></footer>
+  </main>
+
+  <!-- D3 v7 -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+
+  <!-- Order matters -->
+  <script src="js/shared-constants.js"></script>
+  <script src="js/histogram.js"></script>
+  <script src="js/scatterplot.js"></script>
+  <script src="js/interactions.js"></script>
+  <script src="js/load-data.js"></script>
+</body>
+</html>
